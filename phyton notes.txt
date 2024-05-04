@@ -1,0 +1,1105 @@
+## python codes ##
+1)#pattern
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n-i+1):
+        print(" ",end=" ")
+    for j in range(0,2*i-1):
+        print("*",end=" ")
+    for j in range(1,(n-i+1)*2):
+        if j!=(n-i+1)*2-1:
+            print(" ",end=" ")
+    for j in range(0,2*i-1):
+        print("*",end=" ")
+    print()
+for i in range((2*n-1),0,-1):
+    for j in range(1,(2*n)-i):
+        print(" ",end=" ")
+    for j in range(0,2*i-1):
+        print("*",end=" ")
+    print()  
+output:   
+
+        *                 * 
+      * * *             * * * 
+    * * * * *         * * * * * 
+  * * * * * * *     * * * * * * *
+* * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * *
+  * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * *
+      * * * * * * * * * * *
+        * * * * * * * * *
+          * * * * * * *
+            * * * * *
+              * * *
+                *  
+2)#pattern
+n=int(input())
+for i in range(n-1,0,-1):
+    if i==1:
+        for j in range(1,n-i+1):
+            print(" ",end=" ")
+        for j in range(0,2*i-1):
+            print("*",end=" ")
+        print()
+    else:
+        for j in range(1,n-i+1):
+            print(" ",end=" ")
+        for j in range(0,2*i-1):
+            if j==0 or j==2*i-2:
+                print("*",end=" ")
+            else:
+                print(" ",end=" ")
+        print()                        
+output:
+  *                       * 
+    *                   * 
+      *               * 
+        *           * 
+          *       *
+            *   *
+              *  
+
+3)#sum of three numbers equal to target
+
+nums=[2,3,4,5,6]
+target=9
+def threesum(nums,target):
+        a=[]
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                for k in range(j+1,len(nums)):
+                    if nums[i]+nums[j]+nums[k]==target:
+                     a.append(i)
+                     a.append(j)
+                     a.append(k)
+                     return a 
+print(threesum(nums,target))        
+
+o/p:
+[0, 1, 2]
+
+4) #remove duplicates from list
+l=[1,1,1,2,3,4,4]
+a=[]
+for i in l:
+    if i not in a:
+        a.append(i)
+print(a) 
+output:
+[1, 2, 3, 4]
+
+5) # sum of even and odd numbers in list
+l=[1,2,4,3,5,1]
+m=0;
+n=0;
+for i in l:
+    if i%2==0:
+        m=m+i
+    else:
+        n=n+i
+print("even no:",m)
+print("odd no:",n) 
+output:
+even no: 6
+odd no: 10 
+ 
+6)# comman elements in both the list
+l1=[1,4,5,3,2]
+l2=[2,5,3,4,7]
+l=[]
+for i in l1:
+    if i in l2:
+        l.append(i)
+print(l)  
+output:
+  [4, 5, 3, 2]
+
+7)# uncomman elements in both the list
+l1=[1,4,5,3,2]
+l2=[2,5,3,4,7]
+l=[]
+for i in l1:
+    if i not in l2:
+       l.append(i)
+for i in l2:       
+    if i not in l1:
+     l.append(i)
+print(l) 
+output:
+[1,7]
+
+8) # finding prime number and counting numbers
+def isprime(x):
+    for i in range(2,x//2+1):
+        if x%i==0:
+            return 0
+    else:
+            return 1
+l=int(input())
+u=int(input())
+for i in range(l,u+1):
+    a=isprime(i)
+    if a==1:
+        print(i)
+output:
+i/p:   2
+ i/p:  10
+2
+3
+5
+7
+
+9)#convert a decimal number to binary
+n=int(input())
+r=""
+while n!=0:
+    rem=n%2
+    r=r+str(rem)//here str written to convert int remainder to string form 
+                    and it store in s=""
+    n=n//2
+print(r[::-1])    
+output:
+i/p:8
+1000
+
+10)#check if anumber is a perfect square
+n=int(input())
+i=1
+while i*i<n:
+    i+=1
+if i*i==n:
+    print("perfect square")
+else:
+    print("non perfect")        
+
+
+oooooooorooooooooor
+
+n=int(input())
+i=1
+while i**2<n:
+    i+=1
+if i**2==n:
+    print("perfect square")
+else:
+    print("non perfect")        
+output:
+26
+non perfect
+
+11)#check if number is power of two
+n=int(input())
+i=0
+while 2**i<n:
+    i+=1
+if 2**i==n:
+    print("it is a power of two")
+else:
+    print("not a power of two")
+output:
+  45
+not a power of two  
+
+12)#to a find armstrong number
+n=int(input()) 
+a=0
+t=n
+d=len(str(n))//this line use to find lenght of a string
+while t>0:      because we need length to power the number
+    rem=t%10
+    a=a+(rem**d)
+    t=t//10
+if a==n:
+    print("armstrong")
+else:
+    print("not armstrong")  
+output:
+371
+armstrong
+
+13)#check if given number is perfect number or not
+n=int(input()) 
+r=0
+for i in range(1,n):
+    if n%i==0:
+        r+=i
+if r==n:
+    print("it is perfect number")
+else:
+    print("not perfect") 
+output:
+ 28
+it is perfect number          
+15
+not perfect
+
+14)#check if given number is abundent no or not
+n=int(input()) 
+r=0
+for i in range(1,n):
+    if n%i==0:
+        r+=i
+if r>n:
+    print("it is abundent number")
+else:
+    print("not abundent")            
+ output:
+12
+it is abundent number
+43
+not abundent
+
+15)# sum of even and odd number in list  
+l=[1,3,2,5,4,6,7,8]         
+even=0
+odd=0
+for i in l:
+    if i%2==0:
+        even+=i
+    else:
+        odd+=i
+print("even sum=",even)
+print("odd sum=",odd)        
+
+output:
+even sum= 20
+odd sum= 16
+
+16)# reverse of a list
+l=[1,2,3,4,5]    orroror    l=[1,2,3,4,5]
+print(l[::-1])              for i in range(len(l)-1,-1,-1): 
+                            print()      
+output:                      
+[5, 4, 3, 2, 1]
+
+17)#find a largest number in a list
+l=[2,3,45,67,89,100]               
+m=l[0]
+for i in l:
+    if i>m:
+        m=i
+print(m)
+       
+output:
+100
+ ororororororororororor
+
+ l=[2,3,45,67,89,100]
+ m=l[0]         
+for i in range(len(l)):
+    if l[i]>m:
+        m=l[i]
+print(m)
+
+output:
+100
+
+18)#find a smallest number in a list
+l=[2,3,45,67,89,100]               
+m=l[0]//reference variable to compare each element in list
+for i in l:
+    if i<m:
+        m=i
+print(m)
+       
+output:
+2
+ ororororororororororor
+
+ l=[2,3,45,67,89,100]
+ m=l[0]         
+for i in range(len(l)):
+    if l[i]<m:
+        m=l[i]
+print(m)
+
+output:
+2
+
+19)# finding a second smallest or largest value in list
+l=[3,4,5,7,6,8,9]
+p=set(l)
+q=list(p)
+print(q[1])//to get second largest just we have to put negative value
+              in print
+output:
+4
+
+20)# removing duplicate from list without using set
+l=[1,2,2,2,2,4,5,6]
+a=[]
+for i in l:
+    if i not in a:
+        a.append(i)
+print(a)
+        
+output:
+[1, 2, 4, 5, 6]
+
+21)#reverse a each word in sentence
+s="how r u gouri"
+l=list(s.split(" "))
+s=""
+for i in l:
+    s=s+i[::-1]+" "
+print(s) 
+output:
+ woh r u iruog 
+
+22)#check if given string is anagram or not
+a=input()
+b=input()
+s=set(a)
+s2=set(b)
+if s==s2:
+    for i in s:
+        if a.count(i)!=b.count(i):
+             print("not anagram")
+             break
+    else:
+            print("anagram")
+else:
+    print("not anagram") 
+output:
+ god
+cat
+not anagram
+
+god
+dog
+anagram
+
+##########strings############
+
+in string slicing is important.
+string is indexed base strating from 0,1,2,....
+ex:s="abcdefghijklmnopqrstuvwxyz"
+print(s[4:-10:1])
+output:
+efghijklmnop
+
+
+s="abcdefghijklmnopqrstuvwxyz"
+print(s[-20:-10:1])
+
+output:
+ghijklmnop
+
+///append keyword use to just add what there in list
+///extend keyword use to extend the list numbers of previous list
+
+ex:2::# getting even and odd numbers in single list using slicing and extendkeyword
+s=[1,2,3,4,5,6,7,8,9,1]
+even=s[1::2]
+odd=s[-2::-2]
+l=[]
+l.extend(even)
+l.extend(odd)
+print(l)
+output:
+[2, 4, 6, 8, 1, 9, 7, 5, 3, 1]
+
+ex:3::s=[1,2,3,4,5,6,7,8,9,1]
+l=s[2::3]+s[1::2]
+print(l)
+output:
+[3, 6, 9, 2, 4, 6, 8, 1]
+###rotation of a list or string use to rotate a numbers in list
+here values may change according to n values using loop and slicing and it is not fix
+we may do in many ways###
+ex:4::#rotation of a list
+a=[1,2,3,4,5]
+n=4//giving number of rotations
+print(a[-n::]+a[0:-n])
+output:
+[2, 3, 4, 5, 1]
+
+$$when we give n is more than list numbers then we have to do following 
+code..
+ex:4::# exeed rnumber rotation of a list
+n=int(input())
+a=[1,2,3,4,5]
+if n>len(a):
+    n=n%len(a)
+print(a[-n::]+a[0:-n])
+output:
+8
+[3, 4, 5, 1, 2]
+
+
+ex:5::check with three conditions and check is it a valid phone number or not
+condition-->1)lenght=10
+            2)strat with 6,7,8,9
+            3)each char should be digit
+program:
+#is it  valid phone number or not..
+s=str(input())
+if s[0]=='6' or s[0]=='7' or s[0]=='8' or s[0]=='9':
+    if s.isdigit():
+        print("valid")
+    else:
+        print("invalid")
+else:
+    print("invalid") 
+output:
+ 1234
+invalid
+9164999956
+valid 
+
+ex:5::# get output you are how hey using split amd join keyword
+s=" hey how are you "
+l=list(s.split(" ")) #split is use to divide words by space
+l=l[::-1]#reversing list
+ans=" ".join(l)# join use to after dividing
+print(ans) 
+output:
+you are how hey
+        
+ex:6::#reverse a each word in sentence
+s="how r u gouri"
+l=list(s.split(" "))
+s=""
+for i in l:
+    s=s+i[::-1]+" "
+print(s) 
+output:
+ woh r u iruog 
+
+ex:7::#check given string is palindrome or not
+s=str(input())
+s1=s.upper()
+if s1==s1[::-1]:
+    print("palindrome")
+else:
+    print("not palindrome")    
+output:
+gouri
+not palindrome
+madam
+palindrome
+$$$$$$$$$$$$$$ end of string $$$$$$$$$$$$$$$
+
+
+*************recurssion******************
+recurssion has limit.
+the function  calls itself.
+format of recurssion::
+*first define a function in that give base condition it decides where function get end
+def fun()
+  base condition:
+  1]. #factorial of a number using recurssion
+def fact(a,x):
+    if a==x:
+        return x
+    return a*fact(a+1,x)
+n=int(input())
+a=fact(1,n)
+print(a) 
+output:
+4
+24
+
+  2]. #fibbonacci series
+def fib(x):
+    if x<=1:
+        return x
+    return fib(x-1)+fib(x-2)
+n=int(input())
+a=fib(n)
+print(a)
+output:
+5
+5 
+ 3].#fibbonacci series
+def rev(x,res):
+    if x<=0:
+        return res
+    rem=x%10
+    res=res*10+rem
+    return rev(x//10,res)
+n=int(input())
+res=0
+a=rev(n,res)
+print(a)
+output:
+1234
+4321
+
+  4].#power of three using recurssion
+def power(i,x):
+    if 3**i==x:
+        return True
+    elif 3**i>=x:
+        return False
+    else:
+        return power(i+1,x)
+n=int(input())
+a=power(1,n)
+print(a)
+output:
+45
+false
+27
+true
+
+-------------------------*OOPS CONCEPT*--------------------------------------------
+class:user defined data type
+when u say class by collective word for ex:students,human being,not individual persons 
+here objects are individuals of a class
+
+attributes:variables ex:gener,height,weight
+behaviour:function    ex:run,walk all about action
+class defination:
+ex:
+
+ 
+class person:
+    def __init__(self,x,y,z):
+        self.nickname=x
+        self.roll=y
+        self.height=z
+    def run(self):
+        print("i can run",self.nickname,self.roll)
+harsha=person("chintu",78,6)
+anjali=person("mary",89,5)
+harsha.run()
+anjali.run()               
+
+output:
+
+i can run chintu 78
+i can run mary 89
+##################abstraction example #################3
+#example for abstraction
+class mobile:
+    def functions(self):
+        pass
+class iphone(mobile):
+    def functions(self):
+        print("hey i am iphone")
+class samsung(mobile):
+    def functions(self):
+        print("hey i am samsung")
+iphone13=iphone()
+iphone13.functions()
+samsungs3=samsung()
+samsungs3.functions()
+output:
+ hey i am iphone
+hey i am samsung 
+#######################encapsulation example ###########################
+ #example for encapsulation
+class car:
+    _engine="v8"
+    _wires="blue"
+    def getter(self):
+        print(self._engine)
+        print(self._wires)
+    def setter(self,engine,wires):
+        self._engine=engine 
+        self._wire=wires  
+bmw=car()
+bmw.setter("v9","red")
+bmw.getter()  
+output:
+v9
+blue
+#####################inheritance concept ###############################
+ 1} #example for single inheritance
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child(parents):
+    def coding(self):
+        print("i know coding")
+rahul=child()
+rahul.coolness()
+rahul.coding() 
+output:
+parents are cool
+i know coding
+-----------------------------------------------------------------
+2}#example for multilevel inheritance
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child(parents):
+    def coding(self):
+        print("i know coding")
+class child2(child):
+    def dancing(self):
+        print("i am dancing")        
+rahul=child2()
+rahul.coolness()
+rahul.coding()
+rahul.dancing() 
+output;
+parents are cool
+i know coding
+i am dancing
+--------------------------------------------------------------------------
+3}#example for multiple inheritance
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child:
+    def coding(self):
+        print("i know coding")
+class child2(parents,child):
+    def dancing(self):
+        print("i am dancing")        
+rahul=child2()
+rahul.coolness()
+rahul.coding()
+rahul.dancing() 
+output:
+parents are cool
+i know coding
+i am dancing
+----------------------------------------------------------------------------
+4}#example for heirarchial inheritance
+class parent:
+    def coolness(self):
+        print("parents are cool")
+class child1(parent):
+    def coding(self):
+        print("i know coding")
+class child2(parent):
+    def dancing(self):
+        print("i am dancing") 
+rahul=child1()
+rahul.coolness()
+rahul.coding()
+ammu=child2()
+ammu.coolness()
+ammu.dancing()             
+ output:
+  parents are cool
+i know coding
+parents are cool
+i am dancing
+------------------------------------------------------------------------
+5} #example for hybrid inheritance
+class parent:
+    def coolness(self):
+        print("parents are cool")
+class child1(parent):
+    def coding(self):
+        print("i know coding")
+class child2(parent):
+    def dancing(self):
+        print("i am dancing") 
+class grandchild(child1,child2):
+    def singing(self):
+        print("i am singing")        
+gouri=grandchild()
+gouri.coolness()
+gouri.coding()
+gouri.dancing()
+gouri.singing()
+
+output:
+parents are cool
+i know coding
+i am dancing
+i am singing
+             
+####################polymorphism concept ##############################
+here we have two types overloading and overriding
+but in python overloading cannot work
+--------------------------------------------------------------------------
+  ex)->#example for polymorphism
+class addition:
+    def add(self,x,y):
+        print(x+y)
+class child(addition):
+    def add(self,x,y,z):
+        print(x+y+z)
+i=child()
+i.add(5,6,7)        
+output:
+18                
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+...............introduction of datastructures..............................
+1))LINEAR SEARCH:searching of element one by one in a array
+  ex:->  l=[1,2,3,4,5,6,7,8,9]
+for i in l:
+    if i==4:
+        print("found")
+        break
+else:
+    print("not found")          
+output:
+found
+__________________________________________________________________________________________
+2))BINARY SEARCH:searchinf elements using two pointers
+(first element+last element)/2==mid number
+if mid number is larger than key keep going on right side
+if mid number is smaller than key keep gong on lef side
+
+ *when we know how many times we have repeat on that time we use for loop
+*opposite of for loop is while loop  
+  ex:->#example for binary serach
+l=[0,5,7,3,9,1,3,45,8]
+l.sort()
+print(l)
+i=0
+j=len(l)-1
+s=5
+while i<j:
+    mid=(i+j)//2
+    if l[mid]==s:
+        print(mid,"found")
+        break
+    elif l[mid]>s:
+        j=mid-1
+    else:
+        i=mid+1
+else:
+    print("not found")        
+output:
+[0, 1, 3, 3, 5, 7, 8, 9, 45]
+4 found
+
+-------------time complexity of a program--------------
+*big o it will take constant value
+o(1)best complexity will take always first one(fix one)
+*o(n) average complexity here n means using only one loop
+*o(n) worst complexity 
+*(nlogn) is indicates that size is decreasing by half in each and every iteration
+-_____________________________________________________________________________________________
+
+threre are 5 sorting techniques
+3)a)BUBBLE SORT:ascending the values the highest value goes to last
+ex:->#example for bubble sort
+l=[4,8,9,2,1,5,7]
+for i in range(0,len(l)-1):
+    for j in range(0,len(l)-i-1):
+        if l[j]>l[j+1]:
+            l[j],l[j+1]=l[j+1],l[j]
+print(l)    
+output:
+ [1, 2, 4, 5, 7, 8, 9]
+-----------------------------------------------------------------------
+ 3)b)SELECTION SORT :ascending the value by sending smallest value to 
+ first
+ex:-> #example for selection sort
+l=[4,8,9,2,1,5,7]
+for i in range(0,len(l)-1):
+    m=i 
+    for j in range(i+1,len(l)):
+        if l[m]>=l[j]:
+            m=j
+    l[i],l[m]=l[m],l[i]        
+print(l) 
+output:
+ [1, 2, 4, 5, 7, 8, 9]
+---------------------------------------------------------------------------
+3)c)INSERTION SORT :you will take one number and put where u want randomly
+ in insertion sort we always start from 2nd number and divided into two
+divisions one sorted array and one unsorted array.
+ex:->#example for insertion sort
+b=[6,5,4,3,21,19,10]
+for i in range(1,len(b)):
+    j=i-1
+    a=b[i] 
+    while j>=0 and b[j]>a:
+        b[j+1]=b[j]
+        j-=1
+    b[j+1]=a
+print(b)
+output:
+ [3, 4, 5, 6, 10, 19, 21] 
+--------------------------------------------------------------------------------
+3)d)MERGE SORT:two pointer approaching
+merge sort also known as divide till we get single element and solve the sort.
+ex:-> #example for merge sort
+def merge(arr,beg,mid,end):
+    n1=mid-beg+1
+    n2=end-mid
+    i=j=0
+    left=arr[beg:mid+1]
+    right=arr[mid+1:end+1]
+    k=beg
+    while i<n1 and j<n2:
+        if left[i]<right[j]:
+            arr[k]=left[i]
+            i+=1
+        else:
+            arr[k]=right[j]
+            j+=1
+        k+=1
+    while i<n1:
+        arr[k]=left[i]
+        k+=1
+        i+=1
+    while j<n2:
+        arr[k]=right[j]
+        k+=1
+        j+=1
+def mergesort(arr,beg,end):
+    if beg<end:
+        mid=(beg+end)//2
+        mergesort(arr,beg,mid)
+        mergesort(arr,mid+1,end)
+        merge(arr,beg,mid,end)
+a=[8,6,7,9,4,2,1]
+b=0
+e=len(a)-1
+mergesort(a,b,e)
+print(a)        
+
+output:
+[1,2,4,6,7,8,9]
+-----------------------------------------------------------------------------------
+3)e)QUICK SORT:this is also two pointer approach one start and end.
+______________________________________________________________________________________________-
+4)STACK AND QUEUE:we can directly implement a stack and queue by using list .
+but here we implement by oops concept.
+ex:"stack":-> class stack:
+    def __init__(self):
+        self.top=-1
+        self.size=5
+        self.list=[]
+    def push(self,data):
+        if len(self.list)==5:
+            print("full")
+            return 0
+        self.top+=1
+        self.list.append(data)
+    def pop(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        self.top-=1
+        self.list.pop()
+    def peek(self):
+        print(self.list)
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        elif self.top>5:
+            print("out of index")
+        else:
+            print(self.list[self.top])
+s=stack()
+s.push(1)
+s.push(2)
+s.push(3)
+s.push(4) 
+s.pop()
+s.push(6)
+s.peek()
+
+output:
+[1,2,3,6]
+6
+
+ex:"queue":-> class queue:
+    def __init__(self):
+        self.rear=self.front=-1
+        self.size=5
+        self.list=[]
+    def enqueue(self,data):
+        if len(self.list)==5:
+            print("full")
+            return 0
+        self.rear+=1
+        self.list.append(data)
+        if self.front==-1:
+            self.front+=1
+    def dqueue(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        self.list.pop(0)
+        self.front+=1
+    def display(self):
+            if len(self.list)==0:
+              print("empty")
+              return 0
+            print(self.list)
+q=queue()
+q.enqueue(5)
+q.enqueue(7)
+q.enqueue(8)
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+q.dqueue()
+q.display()
+
+output:
+[7,8,1,2]
+___________________________________________________________________________________________
+5)SINGLE LINKEDLIST: 
+  EX:1:-> insert at beginning.
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insertatbeg(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            newnode.next=self.head
+            self.head=newnode
+    def printlist(self):
+        curr=self.head
+        while (curr!=None):
+            print(curr.data,"->",end=" ")
+            curr=curr.next
+        print("null")
+l=linkedlist()
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.printlist() 
+output:
+4 -> 3 -> 2 -> 1 -> null
+
+EX:2:=> insert at end.
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insertatend(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            curr=self.head
+            while curr.next!=None:
+                curr=curr.next
+            curr.next=newnode    
+    def printlist(self):
+        curr=self.head
+        while (curr!=None):
+            print(curr.data,"->",end=" ")
+            curr=curr.next
+        print("null")
+l=linkedlist()
+l.insertatend(1)
+l.insertatend(2)
+l.insertatend(3)
+l.insertatend(4)
+l.printlist() 
+output:
+ 1 -> 2 -> 3 -> 4 -> null
+
+EX:3:-> search an element in list.
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insertatend(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            curr=self.head
+            while curr.next!=None:
+                curr=curr.next
+            curr.next=newnode    
+    def listsearch(self,key):
+        curr=self.head
+        while curr!=None:
+            if curr.data==key:
+                print("found")
+                break
+            curr=curr.next
+        else:
+            print("not found")
+    def printlist(self):
+        curr=self.head
+        while(curr!=None):
+            print(curr.data,"->",end=" ")
+            curr=curr.next
+        print("null")    
+l=linkedlist()
+l.insertatend(1)
+l.insertatend(2)
+l.insertatend(3)
+l.insertatend(4)
+l.printlist()   
+l.listsearch(8)
+output:
+not found
+                     
+
+                      
+
+                           
+                             
+                
+
+                  
+        
+
+
+ 
+                 
+
+          
+
+
+                             
+                                
+                                                                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      
+    
+      
+                                     
+
+
+                                      
+       
